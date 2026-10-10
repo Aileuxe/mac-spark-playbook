@@ -1,0 +1,24 @@
+{"time": "2026-10-10 18:47:09", "prompt_tokens": 509, "answer_tokens": 512, "tok_per_step": 2.08, "accept": 0.599}
+{"time": "2026-10-10 18:47:17", "prompt_tokens": 507, "answer_tokens": 512, "tok_per_step": 1.97, "accept": 0.585}
+{"time": "2026-10-10 18:47:18", "prompt_tokens": 644, "answer_tokens": 62, "tok_per_step": 3.32, "accept": 0.977}
+{"time": "2026-10-10 18:47:19", "prompt_tokens": 736, "answer_tokens": 62, "tok_per_step": 3.32, "accept": 0.933}
+{"time": "2026-10-10 18:47:29", "prompt_tokens": 2006, "answer_tokens": 512, "tok_per_step": 2.02, "accept": 0.646}
+{"time": "2026-10-10 18:47:38", "prompt_tokens": 2006, "answer_tokens": 512, "tok_per_step": 1.8, "accept": 0.617}
+{"time": "2026-10-10 18:47:44", "prompt_tokens": 2429, "answer_tokens": 404, "tok_per_step": 3.89, "accept": 0.997}
+{"time": "2026-10-10 18:47:51", "prompt_tokens": 2434, "answer_tokens": 512, "tok_per_step": 3.88, "accept": 0.99}
+{"time": "2026-10-10 18:48:04", "prompt_tokens": 7992, "answer_tokens": 512, "remote_tokens": 7985, "spark_prefill_s": 3.22, "transfer_s": 0.33, "gbit_s": 8.7, "mb": 355, "tok_per_step": 1.92, "accept": 0.603}
+{"time": "2026-10-10 18:48:18", "prompt_tokens": 7993, "answer_tokens": 512, "remote_tokens": 7986, "spark_prefill_s": 3.23, "transfer_s": 0.37, "gbit_s": 7.7, "mb": 355, "tok_per_step": 1.92, "accept": 0.6}
+{"time": "2026-10-10 18:48:29", "prompt_tokens": 9293, "answer_tokens": 512, "remote_tokens": 9286, "spark_prefill_s": 4.4, "transfer_s": 0.36, "gbit_s": 8.8, "mb": 394, "tok_per_step": 3.85, "accept": 0.984}
+{"time": "2026-10-10 18:48:40", "prompt_tokens": 11333, "answer_tokens": 512, "remote_tokens": 11326, "spark_prefill_s": 5.07, "transfer_s": 0.46, "gbit_s": 7.8, "mb": 455, "tok_per_step": 3.88, "accept": 0.99}
+{"time": "2026-10-10 18:48:58", "prompt_tokens": 15974, "answer_tokens": 512, "remote_tokens": 15967, "spark_prefill_s": 6.54, "transfer_s": 0.6, "gbit_s": 7.9, "mb": 594, "tok_per_step": 2.11, "accept": 0.58}
+{"time": "2026-10-10 18:49:15", "prompt_tokens": 15975, "answer_tokens": 512, "remote_tokens": 15968, "spark_prefill_s": 6.56, "transfer_s": 0.55, "gbit_s": 8.7, "mb": 594, "tok_per_step": 2.08, "accept": 0.621}
+{"time": "2026-10-10 18:49:31", "prompt_tokens": 18435, "answer_tokens": 512, "remote_tokens": 18428, "spark_prefill_s": 8.54, "transfer_s": 0.67, "gbit_s": 8.0, "mb": 668, "tok_per_step": 3.88, "accept": 0.987}
+{"time": "2026-10-10 18:49:46", "prompt_tokens": 18337, "answer_tokens": 512, "remote_tokens": 18330, "spark_prefill_s": 8.5, "transfer_s": 0.59, "gbit_s": 9.0, "mb": 665, "tok_per_step": 3.88, "accept": 0.99}
+{"time": "2026-10-10 18:50:11", "prompt_tokens": 31941, "answer_tokens": 512, "remote_tokens": 31934, "spark_prefill_s": 13.38, "transfer_s": 1.05, "gbit_s": 8.2, "mb": 1072, "tok_per_step": 2.02, "accept": 0.597}
+{"time": "2026-10-10 18:50:36", "prompt_tokens": 31942, "answer_tokens": 512, "remote_tokens": 31935, "spark_prefill_s": 13.36, "transfer_s": 1.06, "gbit_s": 8.1, "mb": 1072, "tok_per_step": 2.17, "accept": 0.598}
+{"time": "2026-10-10 18:51:02", "prompt_tokens": 36134, "answer_tokens": 512, "remote_tokens": 36127, "spark_prefill_s": 16.85, "transfer_s": 1.19, "gbit_s": 8.1, "mb": 1198, "tok_per_step": 3.74, "accept": 0.979}
+{"time": "2026-10-10 18:51:27", "prompt_tokens": 36290, "answer_tokens": 512, "remote_tokens": 36283, "spark_prefill_s": 17.03, "transfer_s": 1.07, "gbit_s": 9.0, "mb": 1202, "tok_per_step": 3.85, "accept": 0.99}
+{"time": "2026-10-10 18:52:04", "prompt_tokens": 55892, "answer_tokens": 512, "remote_tokens": 55885, "spark_prefill_s": 24.32, "transfer_s": 1.72, "gbit_s": 8.3, "mb": 1790, "tok_per_step": 2.25, "accept": 0.656}
+{"time": "2026-10-10 18:52:40", "prompt_tokens": 55891, "answer_tokens": 512, "remote_tokens": 55884, "spark_prefill_s": 24.38, "transfer_s": 1.55, "gbit_s": 9.2, "mb": 1789, "tok_per_step": 2.11, "accept": 0.624}
+{"time": "2026-10-10 18:53:21", "prompt_tokens": 63797, "answer_tokens": 512, "remote_tokens": 63790, "spark_prefill_s": 30.85, "transfer_s": 1.93, "gbit_s": 8.4, "mb": 2026, "tok_per_step": 3.68, "accept": 0.989}
+{"time": "2026-10-10 18:54:01", "prompt_tokens": 63211, "answer_tokens": 512, "remote_tokens": 63204, "spark_prefill_s": 30.68, "transfer_s": 1.81, "gbit_s": 8.9, "mb": 2009, "tok_per_step": 3.71, "accept": 0.987}

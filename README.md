@@ -21,15 +21,33 @@ patched driver, and fork branches with open pull requests. Everything below name
 
 ## Results in short
 
-For an 8k-token prompt with a 512-token answer, the split finishes in **11.4–14.1 s**. TensorFold on one Spark takes
-14.8 s, and the Mac alone 21 s. The split decodes at 52–77 tok/s on prose, against 43 on the Spark alone, and at
-106 tok/s on answers that copy from the prompt.
+Full tables, method and anomalies are in [docs/benchmarks.md](docs/benchmarks.md). The setups compared:
+- **Split:** this playbook.
+- **Mac only:** the same oMLX.
+- **TensorFold on one Spark:** the fastest single-Spark server for this model, with its own drafts.
 
-The Spark alone still gives the **first token 2–4 s sooner**. At 32k tokens the two are level (about 25 s each).
+Each setup ran 24 runs, from 500 to 64k prompt tokens, on prose and on code. Every answer was checked.
 
-Every long-context run found a passphrase planted in the prompt. The full tables, where the time goes, and the
-limitations are in the
-[recipe and report](https://github.com/Aileuxe/MCDMA/blob/qwen38-flash-next-handoff/docs/disaggregated-qwen38-flash-next.md).
+| 512-token answer | Split | Mac only | Spark only (TensorFold) |
+|---|---:|---:|---:|
+| Prose, 8k prompt: first token / total | 5.2 s / 13.3 s | 9.4 s / 17.4 s | **3.1 s** / 13.9 s |
+| Prose, 56k prompt: first token / total | 27.9 s / 36.5 s | 72.7 s / 81.7 s | **23.0 s / 35.1 s** |
+| Code, 10k prompt: first token / total | 6.8 s / 11.4 s | 13.8 s / 18.7 s | **6.3 s / 8.3 s** |
+| Code, 64k prompt: first token / total | **34.5 s / 40.6 s** | 84.4 s / 91.1 s | 57.5 s / 60.8 s |
+| Decode, prose (8k and up) | **58–63 tok/s** | 45–64 tok/s | 42–48 tok/s |
+| Decode, code that copies the prompt | 85–116 tok/s | 77–114 tok/s | **149–262 tok/s** |
+
+In short:
+- **Code, long prompts:** the split wins from about 32k tokens on. vLLM prefills code on the Spark at about
+  2,100 tok/s, against TensorFold's 1,100–1,600.
+- **Code, shorter prompts:** TensorFold wins, because its drafts copy from the prompt more than twice as fast as
+  oMLX's MTP head.
+- **Prose:** the split and TensorFold finish level, and TensorFold gives the first token 2–5 s sooner.
+- **Mac alone** decodes like the split but prefills at 700–850 tok/s.
+
+The KV-cache handoff itself adds:
+- 0.35–1.9 s of transfer at about 8.5 Gbit/s;
+- about 1.7 s of setup on the Mac.
 
 ## What you need
 
@@ -61,10 +79,12 @@ need a shared LAN segment, where the link daemons meet.
 ```
 config.env.example       every site-specific value; copy to ~/.config/mac-spark-playbook/config.env
 docs/setup.md            the steps, in order, with how to check each one
+docs/benchmarks.md       split vs Mac only vs one Spark: prefill, first token, decode, prose and code
 docs/pitfalls.md         what cost us time, and the fix
 mac/                     restore job for the link, LaunchAgents for the link daemon and oMLX
 spark/                   neighbour restore, link daemon, producer, memory watchdog
-bench/                   the two benchmarks behind the numbers above
+bench/                   suite.py (the sweep), report.py (tables), omlx_log_stats.py (handoff breakdown),
+                         two quick single-task benchmarks, and the raw results in bench/results/
 ```
 
 The scripts are generalized from the ones running on our pair. The generalized copies are syntax-checked, but they
