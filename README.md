@@ -1,5 +1,11 @@
 # Mac + Spark playbook: prefill on a DGX Spark, decode on a Mac Studio
 
+![Mac Studio M3 Ultra (left), Lenovo ThinkStation PGX (top right) on an OWC Helios 5S with a ConnectX-5 Ex (bottom right)](docs/img/mac-studio-pgx-helios.webp)
+
+*The pair: Mac Studio M3 Ultra (left); Lenovo ThinkStation PGX, a GB10 Spark (top right); and the OWC Helios 5S
+holding the ConnectX-5 Ex (bottom right). One Thunderbolt 5 cable runs from Mac to Helios, and one 40G QSFP+ cable
+from Helios to Spark.*
+
 This repository shows how to serve one large model from two machines:
 
 - An **NVIDIA GB10 Spark** prefills long prompts, where its compute is strong.
