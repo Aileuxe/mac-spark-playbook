@@ -1,0 +1,11 @@
+#!/bin/sh
+# NetworkManager dispatcher: when the Mac-facing port comes up, restore the static neighbour for
+# the Mac's ConnectX-5. The Mac's mcrdma interface carries no IP and never answers neighbour
+# discovery. Install as /etc/NetworkManager/dispatcher.d/90-mcdma-neigh (root, 0755) with the
+# three values below in /etc/default/mcdma-neigh.
+. /etc/default/mcdma-neigh   # SPARK_CX_IF, MAC_CX5_GID, MAC_CX5_HWADDR
+[ "$1" = "$SPARK_CX_IF" ] || exit 0
+case "$2" in
+  up|reapply)
+    exec /usr/sbin/ip -6 neigh replace "$MAC_CX5_GID" lladdr "$MAC_CX5_HWADDR" nud permanent dev "$SPARK_CX_IF" ;;
+esac
